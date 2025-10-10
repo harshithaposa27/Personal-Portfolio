@@ -442,10 +442,9 @@ h2 span {
 /* ---------- TABLET (769px – 1024px) ---------- */
 @media (min-width: 769px) and (max-width: 1024px) {
     .home {
-        flex-direction: column;
-        align-items: center;
-        padding: 60px 8%;
-        text-align: center;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
     .home-content {
         max-width: 90%;
@@ -485,4 +484,3 @@ h2 span {
         width: 20% !important;
     }
 }
-
