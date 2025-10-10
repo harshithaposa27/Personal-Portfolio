@@ -1,39 +1,9 @@
-/* Responsive styles for mobile compatibility */
-@media (max-width: 768px) {
-    .home {
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    .home-content {
-        max-width: 100%;
-        margin: 0;
-        text-align: center;
-        background-size: contain;
-    }
-    .resume-buttons {
-        flex-direction: column;
-        gap: 8px;
-        align-items: center;
-    }
-    .about-text {
-        text-align: center;
-    }
-    .skills-section, .frontend, .programming-languages, .tools {
-        text-align: center;
-    }
-}
-    /* Resume buttons side by side */
-.resume-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 5px;
-}
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins',sans-serif;
+    font-family: 'poppins', sans-serif;
 }
 body {
     color: white;
@@ -47,6 +17,8 @@ h2 {
 h2 span {
     color: cyan;
 }
+
+/* Header */
 .header {
     position: fixed;
     top: 0;
@@ -85,13 +57,14 @@ h2 span {
 .navbar a:hover {
     color: blue;
 }
+
+/* Home Section */
 .home {
     position: relative;
     height: 100vh;
     z-index: 1;
     width: 100%;
     justify-content: space-between;
-    height: 100vh;
     background-image: url(harshi2.png);
     background-size: cover;
     background-position: center;
@@ -106,8 +79,6 @@ h2 span {
     margin-left: 0;
     flex: 1;
     align-items: flex-start;
-    text-align: left;
-    margin-left: 0;
 }
 .home-content h3 {
     font-size: 32px;
@@ -159,26 +130,33 @@ h2 span {
   margin-top: 10px;
   padding: 70px 10% 0;        
   color: #f9fafa;         
-    text-align: left;
+  text-align: left;
   animation: fadeIn 2s ease-in-out; 
 }
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Resume Buttons */
+.resume-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
 }
 .btn-box:hover {
     box-shadow: 0 0 5px cyan,
     0 0 25px cyan,0 0 50px cyan,
     0 0 100px cyan,0 0 200px cyan
 }
+
+/* About Section */
 .about {
     position: relative;
     height: 100vh;
     z-index: 1;
     width: 100%;
     justify-content: space-between;
-    height: 100vh;
     background-image: url(harshi3.png);
     background-size: cover;
     background-position: center;
@@ -192,7 +170,6 @@ h2 span {
 }
 .about-text h2 span {
     color: cyan;
-    margin-left: 0px;
 }
 .about-text h4 {
     font-size: 29px;
@@ -226,16 +203,8 @@ h2 span {
     0 0 25px cyan,0 0 50px cyan,
     0 0 100px cyan,0 0 200px cyan
 }
-.home-content .text {
-        animation-timing-function: ease-in-out;
-        color: cyan;
-        font-weight: 600;}
-.text{
-    width: 350px;
-    animation-name: text;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-}
+
+/* Skills Section */
 .skills-tech {
     position: relative;
     min-height: 100vh;
@@ -259,7 +228,7 @@ h2 span {
     justify-content: center;
     align-items: flex-start;
     gap: 30px;
-    flex-wrap: wrap; /* makes responsive on small screens */
+    flex-wrap: wrap;
 }
 .frontend,.programming-languages,.tools  {
     padding: 20px;
@@ -291,13 +260,8 @@ h2 span {
 .tech-skills i {
     font-size: 22px;
 } 
-.skills-section {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
-    flex-wrap: wrap;
-}
+
+/* Projects Section */
 .projects {
     position: relative;
     min-height: 100vh;
@@ -309,19 +273,9 @@ h2 span {
     padding: 70px 10% 0;
     text-align: center;
     color: white;
-    margin-bottom: 0;
-}
-.projects {
-    text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(to bottom, #0f8ecf, #0d6fb8);
-}
-.projects h2 {
-    margin-bottom: 40px;
 }
 .projects h2 {
     font-size: 60px;
-    color: white;
     margin-bottom: 30px;
 }
 .project-section {
@@ -358,7 +312,6 @@ h2 span {
 .project-card:hover {
     transform: translateY(-5px);
 }
-
 .project-links {
     margin-top: 15px;
     position: absolute;
@@ -378,11 +331,12 @@ h2 span {
     text-decoration: none;
     transition: 0.3s;
 }
-
 .project-links .btn:hover {
     background: #00b4d8;
     color: white;
 }
+
+/* Contact Section */
 .contact {
     position: relative;
     min-height: 100vh;
@@ -426,56 +380,116 @@ h2 span {
 }
 .contact h2 {
     font-size: 60px;
-    color: white;
     margin-bottom: 30px;
 }
 
+/* Animations */
 @keyframes text {
-    from {
-        margin-left: 20%;
-    }
-    to {
-        margin-left: 0%;
-    }
+    from { margin-left: 20%; }
+    to { margin-left: 0%; }
 }
 @keyframes slideRight {
-    0% {
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0px);
-        opacity: 1;
-    }
+    0% { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateX(0px); opacity: 1; }
 }
 @keyframes slideBottom {
-    0% {
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
+    0% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(0px); opacity: 1; }
 }
 @keyframes slideLeft {
-    0% {
-        transform: translateX(100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0px);
-        opacity: 1;
-    }
+    0% { transform: translateX(100px); opacity: 0; }
+    100% { transform: translateX(0px); opacity: 1; }
 }
 @keyframes slideTop {
-  0% {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0px);
-        opacity: 1;
-    }  
+    0% { transform: translateY(100px); opacity: 0; }
+    100% { transform: translateY(0px); opacity: 1; }
 }
 
+/* ================= RESPONSIVE ================= */
+
+/* ---------- MOBILE (max-width: 768px) ---------- */
+@media (max-width: 768px) {
+    .home {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 5%;
+    }
+    .home-content {
+        max-width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+    .resume-buttons {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+    .about-text,
+    .skills-section,
+    .frontend,
+    .programming-languages,
+    .tools {
+        text-align: center;
+        margin-left: 0 !important;
+    }
+    .about-text h2,
+    .about-text h4,
+    .about-text p,
+    .about-text .btn {
+        margin-left: 0 !important;
+    }
+    .portfolio,
+    .project2 {
+        width: 100% !important;
+    }
+}
+
+/* ---------- TABLET (769px – 1024px) ---------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .home {
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 8%;
+        text-align: center;
+    }
+    .home-content {
+        max-width: 90%;
+        text-align: center;
+    }
+    .resume-buttons {
+        justify-content: center;
+    }
+    .about-text h2,
+    .about-text h4,
+    .about-text p,
+    .about-text .btn {
+        margin-left: 0 !important;
+        text-align: center;
+    }
+    .portfolio,
+    .project2 {
+        width: 45% !important;
+    }
+}
+
+/* ---------- DESKTOP (above 1024px) ---------- */
+@media (min-width: 1025px) {
+    .home {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 70px 10%;
+    }
+    .home-content {
+        text-align: left;
+    }
+    .resume-buttons {
+        justify-content: flex-start;
+    }
+    .portfolio,
+    .project2 {
+        width: 20% !important;
+    }
+}
