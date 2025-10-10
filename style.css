@@ -1,3 +1,29 @@
+/* Responsive styles for mobile compatibility */
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        padding: 30px 5% 0;
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+    }
+    .home-content {
+        max-width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+    .resume-buttons {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+    .about-text {
+        text-align: center;
+    }
+    .skills-section, .frontend, .programming-languages, .tools {
+        text-align: center;
+    }
+}
     /* Resume buttons side by side */
 .resume-buttons {
     display: flex;
