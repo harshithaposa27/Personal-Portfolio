@@ -75,9 +75,7 @@ body {
   min-height: 100vh;
   z-index: 1;
   width: 100%;
-  background-image: url(Bg.png);
-  background-size: cover;
-  background-position: center;
+  background: url('./Bg.png') no-repeat center center / cover;
   padding: 70px 10% 0;
   text-align: center;
   color: white;
@@ -285,3 +283,4 @@ body {
     transform: none;
   }
 }
+
