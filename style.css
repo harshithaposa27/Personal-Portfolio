@@ -477,7 +477,7 @@ h2 span {
         min-height: 100vh;
     }
     .home-content {
-        text-align: center;
+        text-align: left;
         width: 100%;
         max-width: 100%;
         font-size: 14px;
@@ -573,6 +573,7 @@ h2 span {
         width: 20% !important;
     }
 }
+
 
 
 
