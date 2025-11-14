@@ -165,7 +165,7 @@ h2 span {
     justify-content: space-between;
     background-image: url(harshi3.png);
     background-size: cover;
-    background-position: center;
+    background-position: right center;
     display: flex;
     align-items: center;
     padding: 70px 10% 0;
@@ -209,7 +209,57 @@ h2 span {
     0 0 25px cyan,0 0 50px cyan,
     0 0 100px cyan,0 0 200px cyan
 }
-
+.education {
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
+    width: 100%;
+    background-image: url(Bg.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px 10% 40px;
+}
+.education h2 {
+    font-size: 50px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    color: white;
+}
+.education-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+/* center container and limit width so heading sits on top */
+.education-section {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.ssc,.inter,.b-tech  {
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    transition: 0.3s ease;
+}
+.ssc:hover,.inter:hover,.b-tech:hover {
+    transform: translateY(-5px);
+    border-color: cyan;
+    box-shadow: 0px 0px 15px rgba(0,255,255,0.3);
+}
+.education-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: cyan;
+}
 /* Skills Section */
 .skills-tech {
     position: relative;
@@ -418,7 +468,7 @@ h2 span {
     .home {
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: right center;
         flex-direction: column;
         align-items: center;
         padding: 50px 5% 30px;
