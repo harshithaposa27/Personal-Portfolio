@@ -466,7 +466,8 @@ h2 span {
 /* ---------- MOBILE (max-width: 600px) ---------- */
 @media (max-width: 600px) {
     .home {
-        background-size: contain;
+        background-image: url(img-harshi.png);
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: right center;
         flex-direction: column;
@@ -561,5 +562,6 @@ h2 span {
         width: 20% !important;
     }
 }
+
 
 
