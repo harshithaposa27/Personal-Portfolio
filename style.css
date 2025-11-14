@@ -480,8 +480,9 @@ h2 span {
     .frontend,
     .programming-languages,
     .tools {
-        text-align: center;
+        text-align: left;
         margin-left: 0 !important;
+        font-size: 14px;
     }
     .about-text h2,
     .about-text h4,
@@ -562,6 +563,7 @@ h2 span {
         width: 20% !important;
     }
 }
+
 
 
 
