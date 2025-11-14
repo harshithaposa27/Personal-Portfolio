@@ -476,9 +476,8 @@ h2 span {
         padding: 140px 5% 30px;
         min-height: 100vh;
     }
-    .home-content h1, .home-content h2, .home-content h3 {
+    .home-content h3 {
         text-align: left;
-        margin-left: 0 !important;
         width: 100%;
         max-width: 100%;
         font-size: 12px;
@@ -574,6 +573,7 @@ h2 span {
         width: 20% !important;
     }
 }
+
 
 
 
