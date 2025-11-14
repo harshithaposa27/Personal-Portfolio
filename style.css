@@ -484,6 +484,11 @@ h2 span {
     .profile-pic {
         display: none !important;
     }
+    .home-content h3{
+        text-align: left;
+        margin-bottom: 0 !important;
+        font-size: 10px;
+    }
     .about-text,
     .skills-section,
     .frontend,
@@ -572,6 +577,7 @@ h2 span {
         width: 20% !important;
     }
 }
+
 
 
 
