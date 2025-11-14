@@ -477,20 +477,19 @@ h2 span {
         min-height: 100vh;
     }
     .home-content {
-        text-align: center;
-        width: 100%;
-        max-width: 100%;
+        text-align: left;
+        width: 70%;
+        max-width: 70%;
     }
     .profile-pic {
         display: none !important;
     }
-    .home-content,
     .about-text,
     .skills-section,
     .frontend,
     .programming-languages,
     .tools {
-        text-align: left;
+        text-align: center;
         margin-left: 0 !important;
         font-size: 12px;
     }
@@ -573,6 +572,7 @@ h2 span {
         width: 20% !important;
     }
 }
+
 
 
 
