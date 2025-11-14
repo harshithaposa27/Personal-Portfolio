@@ -468,7 +468,7 @@ h2 span {
     .home {
         background-size: contain;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: right center;
         flex-direction: column;
         align-items: center;
         padding: 50px 5% 30px;
@@ -561,4 +561,5 @@ h2 span {
         width: 20% !important;
     }
 }
+
 
