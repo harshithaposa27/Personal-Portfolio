@@ -8,6 +8,12 @@
 body {
     color: white;
 }
+/* Make images responsive */
+img, .project-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 h2 {
     text-align: center;
     font-size: 28px;
@@ -407,17 +413,16 @@ h2 span {
 
 /* ================= RESPONSIVE ================= */
 
-/* ---------- MOBILE (max-width: 768px) ---------- */
-@media (max-width: 768px) {
-    .home-content {
-        max-width: 100%;
-        margin: 0;
-        text-align: center;
-    }
-    .resume-buttons {
+/* ---------- MOBILE (max-width: 600px) ---------- */
+@media (max-width: 600px) {
+    .home {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
         flex-direction: column;
-        gap: 8px;
         align-items: center;
+        padding: 50px 5% 30px;
+        min-height: 100vh;
     }
     .about-text,
     .skills-section,
@@ -436,6 +441,28 @@ h2 span {
     .portfolio,
     .project2 {
         width: 100% !important;
+    }
+    /* reduce header padding on mobile */
+    .header {
+        padding: 12px 5%;
+    }
+    /* make navbar links smaller on small screens */
+    .navbar a {
+        font-size: 18px;
+        margin-left: 12px;
+    }
+}
+
+/* Extra small phones adjustments */
+@media (max-width: 360px) {
+    .home-content h1 {
+        font-size: 36px;
+    }
+    .home-content h3 {
+        font-size: 20px;
+    }
+    .navbar a {
+        font-size: 16px;
     }
 }
 
