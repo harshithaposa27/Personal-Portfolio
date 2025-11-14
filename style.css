@@ -467,9 +467,9 @@ h2 span {
 @media (max-width: 600px) {
     .home {
         background-image: url(img-harshi.png);
-        background-size: 120px 120px;
+        background-size: cover;
         background-repeat: no-repeat;
-        background-position: center top;
+        background-position: right top;
         background-attachment: scroll;
         flex-direction: column;
         align-items: center;
@@ -477,7 +477,7 @@ h2 span {
         min-height: 100vh;
     }
     .home-content {
-        text-align: center;
+        text-align: left;
         width: 100%;
         max-width: 100%;
     }
@@ -578,6 +578,7 @@ h2 span {
         width: 20% !important;
     }
 }
+
 
 
 
