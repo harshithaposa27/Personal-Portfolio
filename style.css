@@ -478,8 +478,8 @@ h2 span {
     }
     .home-content {
         text-align: left;
-        width: 70%;
-        max-width: 70%;
+        width: 100%;
+        max-width: 100%;
     }
     .profile-pic {
         display: none !important;
@@ -572,6 +572,7 @@ h2 span {
         width: 20% !important;
     }
 }
+
 
 
 
