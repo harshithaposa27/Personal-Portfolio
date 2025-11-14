@@ -476,15 +476,10 @@ h2 span {
         padding: 140px 5% 30px;
         min-height: 100vh;
     }
-    .home-content h3 {
-        text-align: left;
-        width: 100%;
-        max-width: 100%;
-        font-size: 12px;
-    }
     .profile-pic {
         display: none !important;
     }
+    .home-content,
     .about-text,
     .skills-section,
     .frontend,
@@ -573,6 +568,7 @@ h2 span {
         width: 20% !important;
     }
 }
+
 
 
 
