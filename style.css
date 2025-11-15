@@ -542,88 +542,60 @@ h2 span {
         width: 20% !important;
     }
 }
-/* ---------- QUICK FIX: header, overflow and home columns ---------- */
-
-/* avoid any page-wide horizontal scrolling */
-html, body { overflow-x: hidden !important; }
-
-/* make header layout safe and non-overflowing */
-.header {
-  box-sizing: border-box !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 12px !important;
-  padding: 12px 5% !important;
-  height: 60px !important;
-  z-index: 1000 !important;
-}
-
-/* constrain logo so it doesn't push the layout */
-.logo {
-  font-size: 36px !important;
-  max-width: 45% !important;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-}
-
-/* allow navbar to wrap instead of forcing page width */
-.navbar {
-  display: flex !important;
-  gap: 14px !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  flex-wrap: wrap !important;   /* IMPORTANT: prevents pushing content */
-}
-
-/* ===== desktop: balanced left/right home layout ===== */
-@media (min-width: 1025px) {
-  .home {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
+/* ===== MOBILE-ONLY: Fix About section being cut off (<=768px) ===== */
+@media (max-width: 768px) {
+  /* ensure .about stacks normally below header and doesn't use 100vh */
+  .about {
+    position: relative !important;
     width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 120px 10% 40px !important;
-    gap: 40px !important;
-    overflow: visible !important;
-  }
-
-  .home-content {
-    width: 48% !important;
-    max-width: 48% !important;
-    text-align: left !important;
-    box-sizing: border-box !important;
-    background: none !important;
-    padding: 0 !important;
-  }
-
-  .home-photo {
-    width: 48% !important;
-    max-width: 48% !important;
-    display: flex !important;
-    justify-content: flex-end !important;
-    align-items: center !important;
-    box-sizing: border-box !important;
-    padding-right: 0 !important;
-  }
-
-  .home-photo img {
-    width: 350px !important;         /* desktop image size */
     max-width: 100% !important;
     height: auto !important;
+    min-height: auto !important;
     display: block !important;
-    border-radius: 12px !important;
-    border: none !important;         /* remove mobile-only border on desktop */
-    box-shadow: none !important;
-    margin: 0 !important;
+    padding: 40px 6% 40px !important;   /* less vertical space for mobile */
+    box-sizing: border-box !important;
+    z-index: 2 !important;
+    background-image: url("harshi3.png") !important;
+    background-size: cover !important;
+    background-position: center right !important;
+    background-repeat: no-repeat !important;
+  }
+
+  /* Make inner text container full-width and centered */
+  .about-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    text-align: center !important;      /* center for better reading on narrow screens */
+  }
+
+  /* Remove any large left margins used for desktop */
+  .about-text h2,
+  .about-text h4,
+  .about-text p,
+  .about-text .btn {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: center !important;
+  }
+
+  /* Scale the headings and paragraph for mobile */
+  .about-text h2 { font-size: 28px !important; line-height: 1.08 !important; margin-bottom: 8px !important; }
+  .about-text h4 { font-size: 16px !important; margin-bottom: 8px !important; }
+  .about-text p  { font-size: 15px !important; line-height: 1.6 !important; margin-bottom: 12px !important; padding: 0 4px !important; }
+
+  /* Make resume buttons stack nicely */
+  .about-text .btn {
+    display: inline-block !important;
+    margin: 6px 6px !important;
+    padding: 10px 18px !important;
+    font-size: 14px !important;
+  }
+
+  /* Ensure .about doesn't sit behind fixed header */
+  .about, .home + .about {
+    margin-top: 0 !important;
   }
 }
-
-/* keep your existing mobile rules — but make header smaller on small screens */
-@media (max-width: 768px) {
-  .header { padding: 8px 4% !important; height: 56px !important; }
-}
-
