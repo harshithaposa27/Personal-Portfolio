@@ -1,62 +1,636 @@
-/* KEEP MOBILE: image on top, text under it — minimal, reliable */
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+body {
+    color: white;
+}
+/* Make images responsive */
+img, .project-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+h2 {
+    text-align: center;
+    font-size: 28px;
+    margin: 50px 0 30px;
+    color: white;
+}
+h2 span {
+    color: cyan;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: rgb(24, 24, 103);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo {
+    position: relative;
+    font-size: 40px;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+.navbar a {
+    display: inline-block;
+    font-size: 25px;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 30px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+.navbar a:hover {
+    color: blue;
+}
+
+/* Home Section */
+/* --- Home layout fixes --- */
+
+/* Make header height explicit so we can account for it */
+.header {
+  height: 80px;             /* adjust if your header is taller/shorter */
+  padding: 20px 10%;
+  box-sizing: border-box;
+}
+
+/* === HOME SECTION FIX === */
+.home {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;        /* LEFT → RIGHT layout on desktop */
+    align-items: left;
+    padding: 120px 10% 40px;      /* space for fixed header */
+    min-height: 100vh;
+    background-image: url(Bg.png);
+    background-size: cover;
+    background-position: center;
+    gap: 40px;
+    width: 100%
+}
+
+/* Left side content */
+.home-content {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+    color: white;
+}
+
+/* Right side image container */
+.home-photo {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Responsive and neat image */
+.home-photo img {
+    width: 320px;              /* good smooth size */
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;       /* rounded edges */
+    border: 4px solid rgb(247, 183, 71);    /* border around image */
+    padding: 4px;              /* spacing inside border */
+    object-fit: cover;
+    box-shadow: pink;
+}
+
+.home-content h3 {
+    font-size: 38px;      /* increased */
+    font-weight: 700;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+}
+.home-content h1 {
+    font-size: 50px;      /* increased - main name bigger */
+    font-weight: 600;
+    margin: -1px 0;
+}
+.home-content p {
+    font-size: 20px;      /* slightly bigger */
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid rgb(11, 101, 139);
+    border-radius: 50%;
+    font-size: 20px;
+    color: rgb(63, 200, 215);
+    text-decoration: none;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+    margin: 30px 15px 30px 0;
+}
+.home-sci a:hover {
+    background: rgb(18, 148, 199);
+    color: black;
+    box-shadow: 0 0 20px cyan;
+}
+#greeting {
+  font-size: 2.2rem;      /* increased */
+  font-weight: 600;
+  margin-top: 10px;
+  color: #f9fafa;
+  text-align: left;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Resume Buttons */
+.resume-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+.btn-box:hover {
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan,0 0 50px cyan,
+    0 0 100px cyan,0 0 200px cyan
+}
+
+/* About Section */
+.about {
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+    width: 100%;
+    justify-content: space-between;
+    background-image: url(harshi3.png);
+    background-size: cover;
+    background-position: right center;
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+.about-text h2 {
+    font-size: 60px;
+    margin-left: 320px;
+}
+.about-text h2 span {
+    color: cyan;
+}
+.about-text h4 {
+    font-size: 29px;
+    font-weight: 600;
+    color: rgb(245, 157, 42);
+    line-height: 1.7;
+    margin-left: 320px;
+}
+.about-text p {
+    color: rgb(249, 247, 245);
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+    margin-left: 320px;
+}
+.about-text .btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: rgb(61, 156, 194);
+    border-radius: 15px;
+    font-size: 14px;
+    color: black;
+    letter-spacing: 1px;
+    text-decoration: none;
+    animation: slideLeft 1s ease forwards;
+    opacity: 0;
+    animation-delay: 2s;
+    font-weight: 600;
+    margin-left: 320px;
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan,0 0 50px cyan,
+    0 0 100px cyan,0 0 200px cyan
+}
+.education {
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
+    width: 100%;
+    background-image: url(Bg.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px 10% 40px;
+}
+.education h2 {
+    font-size: 50px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    color: white;
+}
+.education-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+/* center container and limit width so heading sits on top */
+.education-section {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.ssc,.inter,.b-tech  {
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    transition: 0.3s ease;
+}
+.ssc:hover,.inter:hover,.b-tech:hover {
+    transform: translateY(-5px);
+    border-color: cyan;
+    box-shadow: 0px 0px 15px rgba(0,255,255,0.3);
+}
+.education-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: cyan;
+}
+/* Skills Section */
+.skills-tech {
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
+    width: 100%;
+    background-image: url(Bg.png);
+    background-size: cover;
+    background-position: center;
+    padding: 70px 10% 0;
+    text-align: center;
+    color: white;
+}
+.skills-tech h2 {
+    font-size: 60px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    color: white;
+}
+.skills-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.frontend,.programming-languages,.tools  {
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    transition: 0.3s ease;
+}
+.frontend:hover,.programming-languages:hover,.tools:hover {
+    transform: translateY(-5px);
+    border-color: cyan;
+    box-shadow: 0px 0px 15px rgba(0,255,255,0.3);
+}
+.skills-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: cyan;
+}
+.tech-skills li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+    font-size: 16px;
+}
+.tech-skills i {
+    font-size: 22px;
+} 
+
+/* Projects Section */
+.projects {
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
+    width: 100%;
+    background-image: url(Bg.png);
+    background-size: cover;
+    background-position: center;
+    padding: 70px 10% 0;
+    text-align: center;
+    color: white;
+}
+.projects h2 {
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+.project-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 5px 10px 20px rgba(0,0,0,0.2);
+    width: 300px;
+    transition: transform 0.3s;
+}
+.portfolio,.project2  {
+    position: relative;
+    min-height: 300px;
+    padding-bottom: 60px;
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    transition: 0.3s ease;
+    width:20%;
+    height: 30%;
+}
+.portfolio:hover,.project2:hover {
+    transform: translateY(-5px);
+    border-color: cyan;
+    box-shadow: 0px 0px 15px rgba(0,255,255,0.3);
+}
+.project-card:hover {
+    transform: translateY(-5px);
+}
+.project-links {
+    margin-top: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    text-align: center;
+}
+.project-links .btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    background: #00e1ff;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.project-links .btn:hover {
+    background: #00b4d8;
+    color: white;
+}
+
+/* Contact Section */
+.contact {
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
+    width: 100%;
+    background-image: url(Bg.png);
+    background-size: cover;
+    background-position: center;
+    padding: 70px 10% 0;
+    text-align: center;
+    color: white;
+}
+.contact-section {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+.contact-section:hover {
+    border-color: cyan;
+    transform: translateY(-20px);
+    box-shadow: 0px 0px 15px rgba(0,255,255,0.3);
+}
+.contact-section i {
+    font-size: 30px;
+    color: cyan;
+    margin-bottom: 10px;
+}
+.contact-section p {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.contact-section a {
+    color: white;
+    text-decoration: none;
+}
+.contact-section a:hover {
+    text-decoration: underline;
+}
+.contact h2 {
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+
+/* Animations */
+@keyframes text {
+    from { margin-left: 20%; }
+    to { margin-left: 0%; }
+}
+@keyframes slideRight {
+    0% { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateX(0px); opacity: 1; }
+}
+@keyframes slideBottom {
+    0% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(0px); opacity: 1; }
+}
+@keyframes slideLeft {
+    0% { transform: translateX(100px); opacity: 0; }
+    100% { transform: translateX(0px); opacity: 1; }
+}
+@keyframes slideTop {
+    0% { transform: translateY(100px); opacity: 0; }
+    100% { transform: translateY(0px); opacity: 1; }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* ---------- MOBILE (max-width: 600px) ---------- */
+//* ===== MOBILE LAYOUT (Image on top + Bg.png background) ===== */
 @media (max-width: 768px) {
-  /* remove any background images that could hide the real <img> */
-  body, .home, .home::before, .home::after { background: none !important; background-image: none !important; }
 
-  .header { position: fixed; top: 0; left: 0; right: 0; height: 60px; z-index: 9999; padding: 8px 5%; }
-
+  /* keep Bg.png on mobile */
   .home {
+    background-image: url("Bg.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
     display: flex !important;
-    flex-direction: column !important; /* image above text */
+    flex-direction: column !important;   /* image first */
     align-items: center !important;
     text-align: center !important;
-    padding: 86px 5% 40px !important;   /* space under fixed header */
-    gap: 14px !important;
-    background: none !important;
+    padding: 120px 5% 40px !important;   /* for fixed header */
+    gap: 20px !important;
   }
 
+  /* image on top */
   .home-photo {
-    order: -1 !important;               /* forces photo first */
+    order: -1 !important;               /* forces photo to top */
     width: 100% !important;
     display: flex !important;
     justify-content: center !important;
-    align-items: center !important;
-    padding: 6px 0 0 !important;
-    z-index: 5 !important;
   }
 
   .home-photo img {
-    width: 260px !important;            /* change this: 220 / 200 / 300 are fine */
-    max-width: 90% !important;
-    height: auto !important;
-    border-radius: 12px !important;
-    border: 5px solid #ffd27f !important; /* change hex for different border color */
-    padding: 4px !important;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.25) !important;
+    width: 250px !important;            /* perfect mobile size */
+    border-radius: 14px !important;
+    border: 4px solid #ffd27f !important;
     object-fit: cover !important;
-    z-index: 6 !important;
-    display: block !important;
   }
 
+  /* text under image */
   .home-content {
-    order: 0 !important;
     width: 100% !important;
-    max-width: 760px !important;
-    margin: 8px auto 0 auto !important;
-    padding: 14px !important;
-    background: rgba(0,0,0,0.42) !important; /* makes text readable */
-    color: #fff !important;
-    border-radius: 10px !important;
-    z-index: 4 !important;
+    background: rgba(0,0,0,0.35);        /* readable text */
+    padding: 15px;
+    border-radius: 12px;
   }
-
-  /* mobile-friendly text sizes */
-  .home-content h3 { font-size: 22px !important; line-height: 1.05 !important; }
-  .home-content h1 { font-size: 34px !important; line-height: 1.05 !important; font-weight: 800 !important; }
-  .home-content p  { font-size: 15px !important; line-height: 1.6 !important; }
-
-  #greeting { font-size: 1.3rem !important; text-align: center !important; padding: 8px 0 !important; }
-
-  /* hide any pseudo-element backgrounds */
-  .home::before, .home::after, .home-photo::before, .home-photo::after { content: none !important; display: none !important; }
 }
+
+
+
+/* Extra small phones adjustments */
+@media (max-width: 360px) {
+    .home-content h1 {
+        font-size: 34px;
+    }
+    .home-content h3 {
+        font-size: 18px;
+    }
+    .home-content p {
+        font-size: 14px;
+    }
+    .navbar a {
+        font-size: 16px;
+    }
+}
+/*-----for mobile-----*/
+@media (max-width: 768px) {
+
+    .home {
+        flex-direction: column;         /* image → text */
+        align-items: center;
+        text-align: center;
+        padding: 140px 5% 40px;
+        gap: 20px;
+    }
+
+    .home-photo img {
+        width: 250px;                  /* perfect mobile size */
+        border-radius: 15px;
+    }
+
+    .home-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    #greeting {
+        text-align: center;
+        padding: 0;
+    }
+}
+
+
+/* ---------- TABLET (769px – 1024px) ---------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .home {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .home-content {
+        max-width: 90%;
+        text-align: left;
+    }
+    .resume-buttons {
+        justify-content: center;
+    }
+    .about-text h2,
+    .about-text h4,
+    .about-text p,
+    .about-text .btn {
+        margin-left: 0 !important;
+        text-align: center;
+    }
+    .portfolio,
+    .project2 {
+        width: 45% !important;
+    }
+}
+
+/* ---------- DESKTOP (above 1024px) ---------- */
+
+@media (min-width: 1025px) {
+    .home {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 120px 10% 40px;
+    }
+
+    .home-content {
+        text-align: left;
+        font-size: xx-large;
+    }
+    .resume-buttons {
+        justify-content: flex-start;
+    }
+    .portfolio,
+    .project2 {
+        width: 20% !important;
+    }
+}
+
+
+
+
+
