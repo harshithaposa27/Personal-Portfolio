@@ -495,89 +495,108 @@ h2 span {
 
 /* ---------- MOBILE (max-width: 600px) ---------- */
 //* ===== MOBILE LAYOUT (Image on top + Bg.png background) ===== */
+/* =========== MOBILE FINAL FIX (paste at END of style.css) =========== */
+html, body {
+  overflow-x: hidden; /* prevent horizontal scrollbar / white area on right */
+}
+
+/* Strong mobile overrides */
 @media (max-width: 768px) {
 
-  /* keep Bg.png on mobile */
+  /* container: full width and single column */
   .home {
-    background-image: url("Bg.png") !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 100px 6% 40px !important; /* leave space for fixed header */
+    gap: 16px !important;
+    background-image: url("Bg.png") !important; /* keep Bg.png on mobile as you wanted */
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
 
-    display: flex !important;
-    flex-direction: column !important;   /* image first */
-    align-items: center !important;
-    text-align: center !important;
-    padding: 120px 5% 40px !important;   /* for fixed header */
-    gap: 20px !important;
+  /* make every direct child a full-width block so no columns remain */
+  .home > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+    float: none !important;
+    position: static !important;
   }
 
   /* image on top */
   .home-photo {
-    order: -1 !important;               /* forces photo to top */
-    width: 100% !important;
+    order: -1 !important; /* ensures image sits before text */
     display: flex !important;
     justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 6px 0 0 !important;
+    background: transparent !important;
   }
 
   .home-photo img {
-    width: 250px !important;            /* perfect mobile size */
-    border-radius: 14px !important;
+    width: 240px !important;       /* change to 220 / 200 if you want smaller */
+    max-width: 88% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 12px !important;
     border: 4px solid #ffd27f !important;
+    padding: 4px !important;
     object-fit: cover !important;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25) !important;
+    z-index: 6 !important;
+    position: relative !important;
   }
 
-  /* text under image */
+  /* content below image, full width and readable */
   .home-content {
+    order: 0 !important;
     width: 100% !important;
-    background: rgba(0,0,0,0.35);        /* readable text */
-    padding: 15px;
-    border-radius: 12px;
+    max-width: 760px !important;
+    padding: 14px !important;
+    margin: 8px auto 0 auto !important;
+    background: rgba(0,0,0,0.40) !important; /* makes text readable over Bg.png */
+    color: #fff !important;
+    border-radius: 10px !important;
+    box-sizing: border-box !important;
+    z-index: 4 !important;
   }
-}
 
+  /* neutralize other blocks that may force columns */
+  .portfolio, .project2, .project-card, .education-section, .skills-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    float: none !important;
+    position: static !important;
+  }
 
+  /* text sizes for mobile */
+  .home-content h3 { font-size: 22px !important; line-height: 1.05 !important; }
+  .home-content h1 { font-size: 34px !important; line-height: 1.05 !important; margin: 6px 0 !important; }
+  .home-content p  { font-size: 15px !important; line-height: 1.6 !important; }
 
-/* Extra small phones adjustments */
-@media (max-width: 360px) {
-    .home-content h1 {
-        font-size: 34px;
-    }
-    .home-content h3 {
-        font-size: 18px;
-    }
-    .home-content p {
-        font-size: 14px;
-    }
-    .navbar a {
-        font-size: 16px;
-    }
-}
-/*-----for mobile-----*/
-@media (max-width: 768px) {
+  /* header safety */
+  .header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 56px !important;
+    z-index: 9999 !important;
+    padding: 8px 5% !important;
+  }
 
-    .home {
-        flex-direction: column;         /* image → text */
-        align-items: center;
-        text-align: center;
-        padding: 140px 5% 40px;
-        gap: 20px;
-    }
-
-    .home-photo img {
-        width: 250px;                  /* perfect mobile size */
-        border-radius: 15px;
-    }
-
-    .home-content {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    #greeting {
-        text-align: center;
-        padding: 0;
-    }
+  /* remove pseudo backgrounds that might cover content */
+  .home::before, .home::after, .home-photo::before, .home-photo::after { content: none !important; display: none !important; }
 }
 
 
@@ -629,6 +648,7 @@ h2 span {
         width: 20% !important;
     }
 }
+
 
 
 
