@@ -542,60 +542,77 @@ h2 span {
         width: 20% !important;
     }
 }
-/* ===== MOBILE-ONLY: Fix About section being cut off (<=768px) ===== */
+/* ===== MOBILE QUICK FIX: header + home + about (<=768px) ===== */
 @media (max-width: 768px) {
-  /* ensure .about stacks normally below header and doesn't use 100vh */
-  .about {
-    position: relative !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: auto !important;
-    display: block !important;
-    padding: 40px 6% 40px !important;   /* less vertical space for mobile */
+  /* header smaller, allow nav to wrap instead of forcing overlap */
+  .header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px !important;
+    padding: 6px 6% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    z-index: 9999 !important;
     box-sizing: border-box !important;
-    z-index: 2 !important;
-    background-image: url("harshi3.png") !important;
-    background-size: cover !important;
-    background-position: center right !important;
-    background-repeat: no-repeat !important;
   }
 
-  /* Make inner text container full-width and centered */
-  .about-text {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-    text-align: center !important;      /* center for better reading on narrow screens */
+  .logo {
+    font-size: 26px !important;
+    max-width: 40% !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
   }
 
-  /* Remove any large left margins used for desktop */
-  .about-text h2,
-  .about-text h4,
-  .about-text p,
-  .about-text .btn {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    text-align: center !important;
-  }
-
-  /* Scale the headings and paragraph for mobile */
-  .about-text h2 { font-size: 28px !important; line-height: 1.08 !important; margin-bottom: 8px !important; }
-  .about-text h4 { font-size: 16px !important; margin-bottom: 8px !important; }
-  .about-text p  { font-size: 15px !important; line-height: 1.6 !important; margin-bottom: 12px !important; padding: 0 4px !important; }
-
-  /* Make resume buttons stack nicely */
-  .about-text .btn {
-    display: inline-block !important;
-    margin: 6px 6px !important;
-    padding: 10px 18px !important;
+  .navbar {
     font-size: 14px !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;     /* important to avoid pushing content */
+    justify-content: center !important;
+    max-width: 55% !important;
   }
 
-  /* Ensure .about doesn't sit behind fixed header */
-  .about, .home + .about {
-    margin-top: 0 !important;
+  /* make sure the page content begins below the fixed header */
+  .home, .about, .education, .skills-tech, .projects, .contact {
+    padding-top: calc(56px + 24px) !important; /* header height + breathing room */
+    box-sizing: border-box !important;
+  }
+
+  /* home content — smaller fonts on mobile so heading doesn't explode */
+  .home-content {
+    width: 100% !important;
+    max-width: 92% !important;
+    padding: 12px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    background: rgba(0,0,0,0.32) !important;
+    border-radius: 10px !important;
+  }
+
+  .home-content h3 { font-size: 20px !important; line-height: 1.05 !important; }
+  .home-content h1 { font-size: 34px !important; line-height: 1.05 !important; margin: 6px 0 !important; }
+  .home-content p  { font-size: 15px !important; line-height: 1.6 !important; }
+
+  /* keep image neat */
+  .home-photo { order: -1 !important; display: flex !important; justify-content: center !important; }
+  .home-photo img { width: 220px !important; max-width: 86% !important; border-radius: 12px !important; }
+
+  /* About mobile: ensure full width and no left margin */
+  .about { padding: 18px 6% 36px !important; min-height: auto !important; }
+  .about-text { width: 100% !important; max-width: 100% !important; margin: 0 auto !important; padding: 0 !important; text-align: center !important; }
+  .about-text h2 { font-size: 28px !important; }
+  .about-text p  { font-size: 15px !important; line-height: 1.6 !important; }
+
+  /* neutralize anything that could create side columns */
+  .portfolio, .project2, .project-card, .education-section, .skills-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 12px auto !important;
+    float: none !important;
+    position: static !important;
   }
 }
+
