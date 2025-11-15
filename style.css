@@ -494,56 +494,91 @@ h2 span {
 /* ================= RESPONSIVE ================= */
 
 /* ---------- MOBILE (max-width: 600px) ---------- */
-@media (max-width: 600px) {
-    .home {
-        background-image: url(HARSHIIMG.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center top;
-        background-attachment: scroll;
-        flex-direction: column;
-        align-items: center;
-        padding: 140px 5% 30px;
-        min-height: 100vh;
-    }
-    .home-content {
-        text-align: center;
-        width: 100%;
-        max-width: 100%;
-    }
+/*  MOBILE: image on TOP, text BELOW, image border, and readable text */
+@media (max-width: 768px) {
+  /* remove home background image on small screens so the actual <img> shows */
+  .home {
+    background-image: none !important;
+    flex-direction: column;     /* image first, text below */
+    align-items: center;
+    text-align: center;
+    padding: 120px 5% 40px;     /* room for fixed header */
+    gap: 18px;
+    min-height: 100vh;
+  }
 
-    .profile-pic {
-        display: none !important;
-    }
-    .about-text,
-    .skills-section,
-    .frontend,
-    .programming-languages,
-    .tools {
-        text-align: left;
-        margin-left: 0 !important;
-        font-size: 14px;
-    }
-    .about-text h2,
-    .about-text h4,
-    .about-text p,
-    .about-text .btn {
-        margin-left: 0 !important;
-    }
-    .portfolio,
-    .project2 {
-        width: 100% !important;
-    }
-    /* reduce header padding on mobile */
-    .header {
-        padding: 12px 5%;
-    }
-    /* make navbar links smaller on small screens */
-    .navbar a {
-        font-size: 18px;
-        margin-left: 12px;
-    }
+  /* ensure the photo block is on top */
+  .home-photo {
+    order: -1;                  /* forces image above content */
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+  /* nice bordered image (mobile) */
+  .home-photo img {
+    width: 260px;               /* mobile image size */
+    max-width: 90%;
+    height: auto;
+    border-radius: 14px;
+    border: 6px solid #ffd27f;  /* warm border (change hex if you want) */
+    padding: 4px;               /* inner spacing between border and image */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    object-fit: cover;
+    background-clip: padding-box;
+    display: block;
+  }
+
+  /* make the text readable over any stray background */
+  .home-content {
+    width: 100%;
+    max-width: 760px;
+    padding: 18px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    /* subtle dark backdrop so white text is readable */
+    background: rgba(0,0,0,0.35);
+    border-radius: 12px;
+  }
+
+  /* font scaling for mobile */
+  .home-content h3 {
+    font-size: 24px;
+    line-height: 1.1;
+  }
+  .home-content h1 {
+    font-size: 36px;
+    line-height: 1.05;
+    margin: 6px 0;
+  }
+  .home-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 0 6px;
+  }
+
+  /* greeting */
+  #greeting {
+    font-size: 1.4rem;
+    padding: 10px 0 0;
+    text-align: center;
+  }
+
+  /* social icons spacing */
+  .home-sci {
+    margin-top: 12px;
+  }
+
+  /* header adjustments so it doesn't overlap */
+  .header {
+    padding: 10px 5%;
+    height: 60px;
+  }
 }
+
 
 /* Extra small phones adjustments */
 @media (max-width: 360px) {
