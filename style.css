@@ -543,76 +543,50 @@ h2 span {
     }
 }
 /* ===== MOBILE QUICK FIX: header + home + about (<=768px) ===== */
+/* === FINAL MOBILE HOME FIX (<=768px) === */
 @media (max-width: 768px) {
-  /* header smaller, allow nav to wrap instead of forcing overlap */
-  .header {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 56px !important;
-    padding: 6px 6% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    z-index: 9999 !important;
-    box-sizing: border-box !important;
-  }
 
-  .logo {
-    font-size: 26px !important;
-    max-width: 40% !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-  }
-
-  .navbar {
-    font-size: 14px !important;
-    gap: 10px !important;
-    flex-wrap: wrap !important;     /* important to avoid pushing content */
-    justify-content: center !important;
-    max-width: 55% !important;
-  }
-
-  /* make sure the page content begins below the fixed header */
-  .home, .about, .education, .skills-tech, .projects, .contact {
-    padding-top: calc(56px + 24px) !important; /* header height + breathing room */
-    box-sizing: border-box !important;
-  }
-
-  /* home content — smaller fonts on mobile so heading doesn't explode */
-  .home-content {
-    width: 100% !important;
-    max-width: 92% !important;
-    padding: 12px !important;
-    margin: 0 auto !important;
-    text-align: center !important;
-    background: rgba(0,0,0,0.32) !important;
-    border-radius: 10px !important;
-  }
-
-  .home-content h3 { font-size: 20px !important; line-height: 1.05 !important; }
-  .home-content h1 { font-size: 34px !important; line-height: 1.05 !important; margin: 6px 0 !important; }
-  .home-content p  { font-size: 15px !important; line-height: 1.6 !important; }
-
-  /* keep image neat */
-  .home-photo { order: -1 !important; display: flex !important; justify-content: center !important; }
-  .home-photo img { width: 220px !important; max-width: 86% !important; border-radius: 12px !important; }
-
-  /* About mobile: ensure full width and no left margin */
-  .about { padding: 18px 6% 36px !important; min-height: auto !important; }
-  .about-text { width: 100% !important; max-width: 100% !important; margin: 0 auto !important; padding: 0 !important; text-align: center !important; }
-  .about-text h2 { font-size: 28px !important; }
-  .about-text p  { font-size: 15px !important; line-height: 1.6 !important; }
-
-  /* neutralize anything that could create side columns */
-  .portfolio, .project2, .project-card, .education-section, .skills-section {
+  /* Force home section into one column */
+  .home {
+    display: block !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 12px auto !important;
+    padding: 80px 5% 40px !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+
+  /* Force image on top, full width */
+  .home-photo {
+    width: 100% !important;
+    margin: 0 auto 20px auto !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .home-photo img {
+    width: 230px !important;
+    max-width: 90% !important;
+    height: auto !important;
+  }
+
+  /* Home content full-width below image */
+  .home-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 15px !important;
+    background: rgba(0,0,0,0.34) !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+  }
+
+  /* Remove any floating/width that creates 2 columns */
+  .home > * {
     float: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
     position: static !important;
   }
 }
-
