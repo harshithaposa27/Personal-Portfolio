@@ -590,3 +590,106 @@ h2 span {
     position: static !important;
   }
 }
+html{
+    scroll-behavior:smooth;
+}
+
+/* Better logo */
+.logo{
+    font-size:32px;
+    font-weight:700;
+    letter-spacing:2px;
+    color:#00eaff;
+}
+
+/* Navbar */
+.navbar a:hover{
+    color:cyan;
+    transition:.4s;
+}
+
+/* Home image */
+.home-photo img{
+    width:360px;
+    max-width:100%;
+    border-radius:50%;
+    border:5px solid cyan;
+    box-shadow:0 0 30px cyan;
+    transition:.4s;
+}
+.home-photo img:hover{
+    transform:scale(1.05);
+}
+
+/* Home paragraph */
+.home-content p{
+    font-size:18px;
+    line-height:1.8;
+    color:#ddd;
+}
+
+/* Resume buttons */
+.resume-buttons{
+    display:flex;
+    gap:20px;
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 28px;
+    background:cyan;
+    color:#081b29;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.4s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px cyan;
+}
+
+/* Backend card */
+.backend{
+    padding:20px;
+    border:1px solid #444;
+    border-radius:10px;
+    background:rgba(255,255,255,.05);
+    transition:.3s;
+}
+.backend:hover{
+    transform:translateY(-5px);
+    border-color:cyan;
+    box-shadow:0 0 15px rgba(0,255,255,.3);
+}
+
+/* Project cards */
+.portfolio,
+.project2,
+.project3{
+    width:330px;
+    min-height:330px;
+}
+
+/* Footer */
+.footer{
+    background:#06141f;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar{
+    width:10px;
+}
+::-webkit-scrollbar-track{
+    background:#081b29;
+}
+::-webkit-scrollbar-thumb{
+    background:cyan;
+    border-radius:10px;
+}
+
