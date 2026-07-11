@@ -11,6 +11,26 @@ This website was built using:
 
 It serves as a central place where I share my projects, achievements, and contact information.  
 
+FoodHub
+│
+├── screenshots
+│      home.png
+│      login.png
+│      registration.png
+│      restaurants.png
+│      menuPage.png
+│      cartPage.png
+│      checkOutPage.png
+│      confirmation.png
+│      orderHistory.png
+│      profile.png
+│
+├── src
+├── README.md
+
+
+
+
 ## 🚀 Features
 - Responsive design for all devices  
 - Projects showcase with descriptions  
