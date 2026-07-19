@@ -380,72 +380,69 @@ h2 span {
     gap: 30px;
     flex-wrap: wrap;
 }
-.project-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 5px 10px 20px rgba(0,0,0,0.2);
-    width: 300px;
-    transition: transform 0.3s;
+.project-links{
+    margin-top:auto;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    padding-top:20px;
 }
-.portfolio,.project2  {
-    position: relative;
-    min-height: 300px;
-    padding-bottom: 60px;
-    padding: 20px;
-    border: 1px solid #444;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.05);
-    transition: 0.3s ease;
-    width:20%;
-    height: 30%;
-}
-.portfolio:hover,.project2:hover {
-    transform: translateY(-5px);
-    border-color: cyan;
-    box-shadow: 0px 0px 15px rgba(0,255,255,0.3);
-}
-.project-card:hover {
-    transform: translateY(-5px);
-}
-.project-links {
-    margin-top: 15px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 20px;
-    text-align: center;
-}
-.project-links .btn {
-    display: inline-block;
-    margin: 5px;
-    padding: 8px 15px;
-    border-radius: 8px;
-    background: #00e1ff;
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s;
+.project-links .btn{
+    width:110px;
+    text-align:center;
+    padding:10px 0;
+    border-radius:25px;
+    background:cyan;
+    color:#081b29;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.4s;
 }
 .project-links .btn:hover {
     background: #00b4d8;
     color: white;
 }
+.portfolio,
+.project2,
 .project3{
-    position: relative;
-    min-height: 320px;
-    padding: 20px;
-    border: 1px solid #444;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.05);
-    transition: .3s ease;
-    width: 300px;
+
+    width:330px;
+
+    min-height:430px;
+
+    padding:25px;
+
+    border:1px solid #444;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.05);
+
+    display:flex;
+
+    flex-direction:column;
+
+    transition:.4s;
 }
 
+.portfolio:hover,
+.project2:hover,
 .project3:hover{
-    transform: translateY(-5px);
-    border-color: cyan;
-    box-shadow: 0 0 15px rgba(0,255,255,.3);
+
+    transform:translateY(-10px);
+
+    border-color:cyan;
+
+    box-shadow:0 0 20px rgba(0,255,255,.4);
+
+}
+.project3 ul{
+    margin:10px 0;
+    padding-left:20px;
+}
+
+.project3 li{
+    margin-bottom:8px;
 }
 /* Contact Section */
 .contact {
@@ -549,6 +546,7 @@ h2 span {
 /* ---------- DESKTOP (above 1024px) ---------- */
 
 @media (min-width: 1025px) {
+
     .home {
         flex-direction: row;
         justify-content: space-between;
@@ -559,14 +557,18 @@ h2 span {
         text-align: left;
         font-size: xx-large;
     }
+
     .resume-buttons {
         justify-content: flex-start;
     }
+
     .portfolio,
-    .project2 {
-        width: 20% !important;
+    .project2,
+    .project3 {
+        width: 330px;
     }
 }
+
 /* ===== MOBILE QUICK FIX: header + home + about (<=768px) ===== */
 /* === FINAL MOBILE HOME FIX (<=768px) === */
 @media (max-width: 768px) {
@@ -688,14 +690,6 @@ html{
     transform:translateY(-5px);
     border-color:cyan;
     box-shadow:0 0 15px rgba(0,255,255,.3);
-}
-
-/* Project cards */
-.portfolio,
-.project2,
-.project3{
-    width:330px;
-    min-height:330px;
 }
 
 /* Footer */
