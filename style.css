@@ -277,11 +277,9 @@ a {
     filter: blur(75px);
     opacity: 0.18;
 }
-
 .profile-card {
     position: relative;
     width: min(340px, 80%);
-    aspect-ratio: 3 / 4;
     padding: 10px;
     border-radius: 28px;
     background: linear-gradient(
@@ -294,14 +292,13 @@ a {
 }
 
 .profile-card img {
+    display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: contain;
-    object-position: center;
     border-radius: 20px;
     transform: rotate(-2deg);
     border: 5px solid var(--bg);
-    background: #101827;
 }
 .floating-card {
     position: absolute;
